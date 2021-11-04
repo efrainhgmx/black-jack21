@@ -23,9 +23,21 @@ const crearDeck = () => {
             deck.push(especial + tipo);
         }
     }
-    console.log(deck);
     deck = _.shuffle( deck );
     console.log(deck);
+
+    return deck;
 }
 
 crearDeck();
+
+
+const pedirCarta = () => {
+
+    const carta = deck.pop();
+    console.log(carta);
+    console.log(deck)
+    return carta;
+}
+
+pedirCarta();
