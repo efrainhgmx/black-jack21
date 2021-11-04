@@ -33,11 +33,15 @@ crearDeck();
 
 
 const pedirCarta = () => {
-
-    const carta = deck.pop();
-    console.log(carta);
-    console.log(deck)
-    return carta;
+    if(deck.length === 0) {
+        throw 'No hay cartas';
+    } else {
+        const carta = deck.pop();
+        console.log(carta);
+        console.log(deck)
+        return carta;
+    }
+    
 }
 
 pedirCarta();
