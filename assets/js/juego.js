@@ -5,7 +5,6 @@
     - 2S = Two of Spades
 */
 
-
 let deck = [];
 const tipos = ['C', 'D', 'H', 'S'];
 const especiales = ['A', 'J', 'Q', 'K'];
@@ -44,7 +43,6 @@ const pedirCarta = () => {
     
 }
 
-//pedirCarta();
 
 
 const valorCarta = ( carta ) => {
