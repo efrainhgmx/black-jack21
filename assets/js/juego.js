@@ -9,6 +9,8 @@ let deck = [];
 const tipos = ['C', 'D', 'H', 'S'];
 const especiales = ['A', 'J', 'Q', 'K'];
 
+const btnPedir = document.querySelector('#btnPedir');
+
 const crearDeck = () => {
 
     for( let i = 2; i <= 10; i++) {
@@ -56,3 +58,8 @@ const valorCarta = ( carta ) => {
 
 const valor = valorCarta(pedirCarta());
 console.log({ valor });
+
+
+btnPedir.addEventListener('click', () => {
+    console.log('Pedir');
+});
