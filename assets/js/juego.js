@@ -13,7 +13,7 @@ let puntosJugador = 0,
     puntosComputadora = 0;
 
 
-const smallTag =  document.querySelector('small');
+const smallTags =  document.querySelectorAll('small');
 const btnPedir = document.querySelector('#btnPedir');
 
 const crearDeck = () => {
@@ -70,5 +70,5 @@ btnPedir.addEventListener('click', () => {
 
     puntosJugador = puntosJugador + valorCarta( carta );
 
-    smallTag.innerHTML = puntosJugador;
+    smallTags[0].innerHTML = puntosJugador;
 });
