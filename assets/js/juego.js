@@ -9,6 +9,11 @@ let deck = [];
 const tipos = ['C', 'D', 'H', 'S'];
 const especiales = ['A', 'J', 'Q', 'K'];
 
+let puntosJugador = 0,
+    puntosComputadora = 0;
+
+
+const smallTag =  document.querySelector('small');
 const btnPedir = document.querySelector('#btnPedir');
 
 const crearDeck = () => {
@@ -61,5 +66,9 @@ console.log({ valor });
 
 
 btnPedir.addEventListener('click', () => {
-    console.log('Pedir');
+    const carta = pedirCarta();
+
+    puntosJugador = puntosJugador + valorCarta( carta );
+
+    smallTag.innerHTML = puntosJugador;
 });
