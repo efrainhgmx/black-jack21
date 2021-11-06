@@ -99,11 +99,13 @@ btnPedir.addEventListener('click', () => {
     if( puntosJugador > 21) {
         console.warn('Perdiste');
         btnPedir.disabled = true;
+        btnDetener.disabled = true;
         turnoComputadora( puntosJugador );
 
     } else if( puntosJugador === 21) {
         console.warn('21!!!');
         btnPedir.disabled = true;
+        btnDetener.disabled =  true;
         turnoComputadora( puntosComputadora );
     }
 });
