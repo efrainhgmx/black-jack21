@@ -14,6 +14,7 @@ let puntosJugador = 0,
 
 
 const smallTags =  document.querySelectorAll('small');
+const btnNuevo = document.querySelector('#btnNuevo');
 const btnPedir = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
 const divCartasJugador =  document.querySelector('#jugador-carta');
@@ -131,4 +132,23 @@ btnDetener.addEventListener('click', () => {
     btnPedir.disabled = true;
 
     turnoComputadora(puntosJugador);
-})
+});
+
+
+btnNuevo.addEventListener('click', () => {
+    deck = [];
+    crearDeck();
+
+    btnPedir.disabled =  false;
+    btnDetener.disabled = false;
+
+    puntosComputadora = 0;
+    puntosJugador = 0;
+
+    smallTags[0].innerText = puntosJugador;
+    smallTags[1].innerText = puntosComputadora;
+
+    divCartasComputadora.innerHTML = '';
+    divCartasJugador.innerHTML = '';
+
+});
