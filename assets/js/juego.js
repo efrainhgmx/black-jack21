@@ -15,6 +15,7 @@ let puntosJugador = 0,
 
 const smallTags =  document.querySelectorAll('small');
 const btnPedir = document.querySelector('#btnPedir');
+const divCartasJugador =  document.querySelector('#jugador-cartas');
 
 const crearDeck = () => {
 
