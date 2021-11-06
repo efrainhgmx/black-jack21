@@ -15,7 +15,7 @@ let puntosJugador = 0,
 
 const smallTags =  document.querySelectorAll('small');
 const btnPedir = document.querySelector('#btnPedir');
-const divCartasJugador =  document.querySelector('#jugador-cartas');
+const divCartasJugador =  document.querySelector('#jugador-carta');
 
 const crearDeck = () => {
 
@@ -70,6 +70,10 @@ btnPedir.addEventListener('click', () => {
     const carta = pedirCarta();
 
     puntosJugador = puntosJugador + valorCarta( carta );
-
     smallTags[0].innerHTML = puntosJugador;
+
+    const imgCarta = document.createElement('img');
+    imgCarta.src = `./assets/cartas/${carta}.png`;
+    imgCarta.classList.add('carta');
+    divCartasJugador.append( imgCarta );
 });
