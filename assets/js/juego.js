@@ -65,6 +65,16 @@ const valorCarta = ( carta ) => {
 }
 
 
+const mensajeJuego = (puntosJugador, puntosComputadora) => {
+    if(puntosJugador === puntosComputadora) {
+        alert('Nadie Gana');
+    } else if(puntosJugador > 21) {
+        alert('Computadora gana!');
+    } else if(puntosComputadora > 21) {
+        alert('HAZ GANADO!!!');
+    }
+};
+
 const turnoComputadora = ( puntosMinimos ) => {
     do {
         const carta = pedirCarta();
@@ -79,9 +89,11 @@ const turnoComputadora = ( puntosMinimos ) => {
 
         if( puntosMinimos > 21) {
             break;
-        }
+        } 
 
     } while( (puntosComputadora < puntosMinimos) && (puntosMinimos <= 21) );
+
+    mensajeJuego(puntosJugador, puntosComputadora);
 };
 
 
