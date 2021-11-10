@@ -12,8 +12,7 @@
     const tipos = ['C', 'D', 'H', 'S'],
           especiales = ['A', 'J', 'Q', 'K'];
 
-    let puntosJugador = 0,
-        puntosComputadora = 0;
+    let puntosJugadores = [];
 
 
     const smallTags = document.querySelectorAll('small'),
@@ -26,8 +25,11 @@
           divCartasComputadora = document.querySelector('#computadora-carta');
 
 
-    const inicializarJuego = () => {
+    const inicializarJuego = ( numJugadores = 2 ) => {
         deck = crearDeck();
+        for( let i = 0; i<numJugadores; i++) {
+            puntosJugadores.push(0);
+        }
     };
 
     const crearDeck = () => {
@@ -54,10 +56,8 @@
         if (deck.length === 0) {
             throw 'No hay cartas';
         } else {
-            const carta = deck.pop();
-            console.log(carta);
-            console.log(deck)
-            return carta;
+
+            return deck.pop();
         }
 
     }
@@ -82,6 +82,10 @@
         } else if (puntosComputadora > 21) {
             alert('HAZ GANADO!!!');
         }
+    };
+
+    const acumularPuntos = () => {
+
     };
 
     const turnoComputadora = (puntosMinimos) => {
