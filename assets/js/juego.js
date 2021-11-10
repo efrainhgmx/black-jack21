@@ -9,19 +9,21 @@
 */
 
     let deck = [];
-    const tipos = ['C', 'D', 'H', 'S'];
-    const especiales = ['A', 'J', 'Q', 'K'];
+    const tipos = ['C', 'D', 'H', 'S'],
+          especiales = ['A', 'J', 'Q', 'K'];
 
     let puntosJugador = 0,
         puntosComputadora = 0;
 
 
-    const smallTags = document.querySelectorAll('small');
-    const btnNuevo = document.querySelector('#btnNuevo');
-    const btnPedir = document.querySelector('#btnPedir');
-    const btnDetener = document.querySelector('#btnDetener');
-    const divCartasJugador = document.querySelector('#jugador-carta');
-    const divCartasComputadora = document.querySelector('#computadora-carta');
+    const smallTags = document.querySelectorAll('small'),
+          btnNuevo = document.querySelector('#btnNuevo'),
+          btnPedir = document.querySelector('#btnPedir'),
+          btnDetener = document.querySelector('#btnDetener');
+
+
+    const divCartasJugador = document.querySelector('#jugador-carta'),
+          divCartasComputadora = document.querySelector('#computadora-carta');
 
     const crearDeck = () => {
 
