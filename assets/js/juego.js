@@ -25,6 +25,11 @@
     const divCartasJugador = document.querySelector('#jugador-carta'),
           divCartasComputadora = document.querySelector('#computadora-carta');
 
+
+    const inicializarJuego = () => {
+        deck = crearDeck();
+    };
+
     const crearDeck = () => {
 
         for (let i = 2; i <= 10; i++) {
@@ -38,13 +43,11 @@
                 deck.push(especial + tipo);
             }
         }
-        deck = _.shuffle(deck);
-        console.log(deck);
+       
 
-        return deck;
+        return _.shuffle(deck);
     }
 
-    crearDeck();
 
 
     const pedirCarta = () => {
