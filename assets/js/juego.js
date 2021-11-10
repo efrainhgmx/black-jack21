@@ -84,16 +84,18 @@
         }
     };
 
-    const acumularPuntos = () => {
+    const acumularPuntos = ( carta, turno ) => {
+        puntosJuagdores[turno] = puntosJugadores[turno] + valorCarta(carta);
+        smallTags[turno].innerText = puntosJuagdores[turno];
 
+        return puntosJugadores[turno];
     };
 
     const turnoComputadora = (puntosMinimos) => {
         do {
             const carta = pedirCarta();
 
-            puntosComputadora = puntosComputadora + valorCarta(carta);
-            smallTags[1].innerHTML = puntosComputadora;
+            acumularPuntos( carta, puntosJugadores.length - 1 );
 
             const imgCarta = document.createElement('img');
             imgCarta.src = `./assets/cartas/${carta}.png`;
@@ -113,10 +115,8 @@
 
 
     btnPedir.addEventListener('click', () => {
-        const carta = pedirCarta();
-
-        puntosJugador = puntosJugador + valorCarta(carta);
-        smallTags[0].innerHTML = puntosJugador;
+        const carta = pedirCarta(),
+            puntosJugador  =  acumularPuntos( carta, 0);
 
         const imgCarta = document.createElement('img');
         imgCarta.src = `./assets/cartas/${carta}.png`;
@@ -154,8 +154,8 @@
         btnPedir.disabled = false;
         btnDetener.disabled = false;
 
-        puntosComputadora = 0;
-        puntosJugador = 0;
+      /*   puntosComputadora = 0;
+        puntosJugador = 0; */
 
         smallTags[0].innerText = puntosJugador;
         smallTags[1].innerText = puntosComputadora;
