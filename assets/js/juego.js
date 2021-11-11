@@ -120,7 +120,7 @@ const BlackJack = (() => {
             puntosComputadora = acumularPuntos( carta, puntosJugadores.length - 1 );
             crearCarta(carta, puntosJugadores.length - 1);
 
-        } while ((puntosComputadora <= puntosMinimos) && (puntosMinimos <= 21));
+        } while (puntosMinimos < 21 && puntosComputadora <= 21);
 
         setTimeout(() => {
             mensajeJuego(puntosJugadores[0], puntosJugadores[puntosJugadores.length - 1]);
