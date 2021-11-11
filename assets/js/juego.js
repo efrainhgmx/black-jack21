@@ -1,5 +1,5 @@
 
-(() => {
+const BlackJack = (() => {
     'use strict'
 
     /*
@@ -155,4 +155,8 @@
         inicializarJuego();
 
     });
+
+    return {
+        inicializarJuego
+    };
 })();
