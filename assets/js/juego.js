@@ -27,6 +27,8 @@ const BlackJack = (() => {
 
     const inicializarJuego = ( numJugadores = 2 ) => {
         deck = crearDeck();
+        puntosJugadores = [];
+
         for( let i = 0; i<numJugadores; i++) {
             puntosJugadores.push(0);
         }
@@ -87,6 +89,12 @@ const BlackJack = (() => {
             alert('Computadora gana!');
         } else if (puntosComputadora > 21) {
             alert('HAZ GANADO!!!');
+        } else  if((puntosJugador > puntosComputadora) && puntosJugador < 21 ) {
+            alert('HAZ GANADO!!')
+        } else if(puntosJugador === 21) {
+            alert('HAZ GANADO');
+        } else {
+            alert('Computadora Gana!!');
         }
     };
 
@@ -112,7 +120,7 @@ const BlackJack = (() => {
             puntosComputadora = acumularPuntos( carta, puntosJugadores.length - 1 );
             crearCarta(carta, puntosJugadores.length - 1);
 
-        } while ((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
+        } while ((puntosComputadora <= puntosMinimos) && (puntosMinimos <= 21));
 
         setTimeout(() => {
             mensajeJuego(puntosJugadores[0], puntosJugadores[puntosJugadores.length - 1]);
@@ -134,9 +142,12 @@ const BlackJack = (() => {
 
         } else if (puntosJugador === 21) {
             console.warn('21!!!');
+            setTimeout(() => {
+                alert('21!!!');
+            },1000);
             btnPedir.disabled = true;
             btnDetener.disabled = true;
-            turnoComputadora(puntosComputadora);
+            turnoComputadora(puntosJugador);
         }
     });
 
