@@ -91,8 +91,8 @@ const BlackJack = (() => {
     };
 
     const acumularPuntos = ( carta, turno ) => {
-        puntosJuagdores[turno] = puntosJugadores[turno] + valorCarta(carta);
-        smallTags[turno].innerText = puntosJuagdores[turno];
+        puntosJugadores[turno] = puntosJugadores[turno] + valorCarta(carta);
+        smallTags[turno].innerText = puntosJugadores[turno];
 
         return puntosJugadores[turno];
     };
@@ -115,7 +115,7 @@ const BlackJack = (() => {
         } while ((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
 
         setTimeout(() => {
-            mensajeJuego(puntosJugador, puntosComputadora);
+            mensajeJuego(puntosJugadores[0], puntosJugadores[puntosJugadores.length - 1]);
         }, 1000)
     };
 
@@ -146,7 +146,7 @@ const BlackJack = (() => {
         btnDetener.disabled = true;
         btnPedir.disabled = true;
 
-        turnoComputadora(puntosJugador);
+        turnoComputadora(puntosJugadores[puntosJugadores.length - 1]);
     });
 
 
