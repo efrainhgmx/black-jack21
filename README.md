@@ -9,3 +9,5 @@ Juega Black Jack contra la computadora e intenta llegar a 21 sin pasarte.
 Si pasas de 21 pierdes, si llegas a 21 ganas o támbien puedes intentar llegar a 21 sin pasarte
 
 #### Proyecto creado con JavaScript Vanilla  y minimizer 
+
+!["Black Jack JS "](./README.gif)
