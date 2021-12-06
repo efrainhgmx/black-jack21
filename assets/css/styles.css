@@ -14,7 +14,7 @@ body {
 }
 
 .carta {
-    width: 150px;
+    width: 95px;
     position: relative;
     left: 100px;
     margin-left: -75px;
@@ -23,4 +23,10 @@ body {
 #computadora-carta,
 #jugador-carta {
     height: 250px;
+}
+
+@media (min-width: 768px) {
+    .carta {
+        width: 150px;
+    }
 }
