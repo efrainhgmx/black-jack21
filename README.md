@@ -1,4 +1,4 @@
-# BLACK JACK EN JAVASCRIPT
+# BLACK JACK EN JAVASCRIPT  🃏
 
 Juega Black Jack contra la computadora e intenta llegar a 21 sin pasarte.
 
